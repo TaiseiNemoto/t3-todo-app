@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { CreateTodo } from "~/components/CreateTodo";
 
 function Home() {
   const { data: sessionData, status } = useSession();
@@ -32,6 +33,9 @@ function Home() {
                 </button>
               </div>
               <div>Todo components coming soon...</div>
+              <div>
+                <CreateTodo />
+              </div>
             </>
           )}
           {status !== "loading" && !sessionData && (
